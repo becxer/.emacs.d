@@ -49,6 +49,8 @@
   (setq linum-format "%4d ")
   (global-linum-mode t)
   
+  (defalias 'yes-or-no-p 'y-or-n-p)
+  
   (when (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
   (when (fboundp 'scroll-bar-mode)
