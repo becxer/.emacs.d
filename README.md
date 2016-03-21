@@ -2,7 +2,7 @@
 
 becxer's .emacs.d defaults
 
-## dependency
+## require dependencies are below
 
 ### emacs24.5
 
