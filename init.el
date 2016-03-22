@@ -35,6 +35,35 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
+;;AUTO-PAIR
+(add-to-list 'load-path "~/.emacs.d/plugins/autopair")
+(require 'autopair)
+(autopair-global-mode)
+
+;;NEO-TREE
+(add-to-list 'load-path "~/.emacs.d/plugins/neotree")
+(require 'neotree)
+(global-set-key (kbd "C-e") 'neotree-toggle)
+
+;;WHICH-KEY
+(add-to-list 'load-path "~/.emacs.d/plugins/which-key")
+(require 'which-key)
+(which-key-mode)
+
+;;INDENT-GUIDE
+(add-to-list 'load-path "~/.emacs.d/plugins/indent-guide")
+(require 'indent-guide)
+(indent-guide-global-mode)
+
+;;SWITCH-WINDOW
+(add-to-list 'load-path "~/.emacs.d/plugins/switch-window")
+(require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
+
+;;RESIZE-FRAME
+(add-to-list 'load-path "~/.emacs.d/plugins/resize-frame")
+(require 'resize-frame)
+
 ;;PYTHON-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
