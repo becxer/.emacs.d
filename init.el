@@ -60,10 +60,6 @@
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 
-;;RESIZE-FRAME
-(add-to-list 'load-path "~/.emacs.d/plugins/resize-frame")
-(require 'resize-frame)
-
 ;;PYTHON-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
