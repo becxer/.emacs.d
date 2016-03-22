@@ -54,3 +54,12 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
+;;CUSTOM THEME
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)
+     (color-theme-lethe)))
+
