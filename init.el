@@ -55,6 +55,26 @@
 (require 'indent-guide)
 (indent-guide-global-mode)
 
+;;ANZU (Advanced REGEX)
+(add-to-list 'load-path "~/.emacs.d/plugins/anzu")
+(require 'anzu)
+(global-anzu-mode +1)
+(set-face-attribute 'anzu-mode-line nil
+                    :foreground "black" :background "yellow" :weight 'bold)
+(custom-set-variables
+ '(anzu-mode-lighter "")
+ '(anzu-deactivate-region t)
+ '(anzu-search-threshold 1000)
+ '(anzu-replace-threshold 50)
+ '(anzu-replace-to-string-separator " => "))
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+
+;;ELSCREEN
+(add-to-list 'load-path "~/.emacs.d/plugins/elscreen")
+(require 'elscreen)
+(elscreen-start)
+
 ;;SWITCH-WINDOW
 (add-to-list 'load-path "~/.emacs.d/plugins/switch-window")
 (require 'switch-window)
