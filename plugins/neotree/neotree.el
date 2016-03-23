@@ -308,35 +308,35 @@ This variable is used in `neo-vc-for-node' when
 
 (defface neo-banner-face
   '((((background dark)) (:foreground "lightblue" :weight bold))
-    (t                   (:foreground "DarkMagenta")))
+    (t                   (:foreground "DarkMagenta" :weight bold)))
   "*Face used for the banner in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-banner-face 'neo-banner-face)
 
 (defface neo-header-face
-  '((((background dark)) (:foreground "White"))
-    (t                   (:foreground "DarkMagenta")))
+  '((((background dark)) (:foreground "White" :weight bold))
+    (t                   (:foreground "DarkMagenta" :weight bold)))
   "*Face used for the header in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-header-face 'neo-header-face)
 
 (defface neo-root-dir-face
-  '((((background dark)) (:foreground "lightblue" :weight bold))
-    (t                   (:foreground "DarkMagenta")))
+  '((((background dark)) (:foreground "DarkMagenta" :weight bold))
+    (t                   (:foreground "DarkMagenta" :weight bold)))
   "*Face used for the root dir in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-root-dir-face 'neo-root-dir-face)
 
 (defface neo-dir-link-face
-  '((((background dark)) (:foreground "DeepSkyBlue"))
-    (t                   (:foreground "MediumBlue")))
+  '((((background dark)) (:foreground "DarkCyan" :weight bold))
+    (t                   (:foreground "DarkCyan" :weight bold)))
   "*Face used for expand sign [+] in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-dir-link-face 'neo-dir-link-face)
 
 (defface neo-file-link-face
-  '((((background dark)) (:foreground "White"))
-    (t                   (:foreground "Black")))
+  '((((background dark)) (:foreground "White" :weight bold))
+    (t                   (:foreground "White" :weight bold)))
   "*Face used for open file/dir in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-file-link-face 'neo-file-link-face)
@@ -348,15 +348,15 @@ This variable is used in `neo-vc-for-node' when
 (defvar neo-button-face 'neo-button-face)
 
 (defface neo-expand-btn-face
-  '((((background dark)) (:foreground "SkyBlue"))
-    (t                   (:foreground "DarkCyan")))
+  '((((background dark)) (:foreground "White" :weight bold))
+    (t                   (:foreground "White" :weight bold)))
   "*Face used for open file/dir in neotree buffer."
   :group 'neotree :group 'font-lock-highlighting-faces)
 (defvar neo-expand-btn-face 'neo-expand-btn-face)
 
 (defface neo-vc-default-face
-  '((((background dark)) (:foreground "White"))
-    (t                   (:foreground "Black")))
+  '((((background dark)) (:foreground "White" :weight bold))
+    (t                   (:foreground "Black" :weight bold)))
   "*Face used for unknown files in the neotree buffer.
 Used only when \(vc-state node\) returns nil."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
@@ -369,15 +369,15 @@ Used only when \(vc-state node\) returns nil."
 (defvar  neo-vc-user-face 'neo-vc-user-face)
 
 (defface neo-vc-up-to-date-face
-  '((((background dark)) (:foreground "LightGray"))
-    (t                   (:foreground "DarkGray")))
+  '((((background dark)) (:foreground "LightGray" :weight bold))
+    (t                   (:foreground "DarkGray" :weight bold)))
   "*Face used for vc-up-to-date files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-up-to-date-face 'neo-vc-up-to-date-face)
 
 (defface neo-vc-edited-face
-  '((((background dark)) (:foreground "Magenta"))
-    (t                   (:foreground "DarkMagenta")))
+  '((((background dark)) (:foreground "Magenta" :weight bold))
+    (t                   (:foreground "DarkMagenta" :weight bold)))
   "*Face used for vc-edited files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-edited-face 'neo-vc-edited-face)
@@ -389,8 +389,8 @@ Used only when \(vc-state node\) returns nil."
 (defvar  neo-vc-needs-update-face 'neo-vc-needs-update-face)
 
 (defface neo-vc-needs-merge-face
-  '((((background dark)) (:foreground "Red1"))
-    (t                   (:foreground "Red3")))
+  '((((background dark)) (:foreground "Red1" :weight bold))
+    (t                   (:foreground "Red3" :weight bold)))
   "*Face used for vc-needs-merge files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-needs-merge-face 'neo-vc-needs-merge-face)
@@ -402,8 +402,8 @@ Used only when \(vc-state node\) returns nil."
 (defvar  neo-vc-unlocked-changes-face 'neo-vc-unlocked-changes-face)
 
 (defface neo-vc-added-face
-  '((((background dark)) (:foreground "LightGreen"))
-    (t                   (:foreground "DarkGreen")))
+  '((((background dark)) (:foreground "LightGreen" :weight bold))
+    (t                   (:foreground "DarkGreen" :weight bold)))
   "*Face used for vc-added files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-added-face 'neo-vc-added-face)
@@ -415,22 +415,22 @@ Used only when \(vc-state node\) returns nil."
 (defvar  neo-vc-removed-face 'neo-vc-removed-face)
 
 (defface neo-vc-conflict-face
-  '((((background dark)) (:foreground "Red1"))
-    (t                   (:foreground "Red3")))
+  '((((background dark)) (:foreground "Red1" :weight bold))
+    (t                   (:foreground "Red3" :weight bold)))
   "*Face used for vc-conflict files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-conflict-face 'neo-vc-conflict-face)
 
 (defface neo-vc-missing-face
-  '((((background dark)) (:foreground "Red1"))
-    (t                   (:foreground "Red3")))
+  '((((background dark)) (:foreground "Red1" :weight bold))
+    (t                   (:foreground "Red3" :weight bold)))
   "*Face used for vc-missing files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-missing-face 'neo-vc-missing-face)
 
 (defface neo-vc-ignored-face
-  '((((background dark)) (:foreground "DarkGrey"))
-    (t                   (:foreground "LightGray")))
+  '((((background dark)) (:foreground "DarkGrey" :weight bold))
+    (t                   (:foreground "LightGray" :weight bold)))
   "*Face used for vc-ignored files in the neotree buffer."
   :group 'neotree-vc :group 'font-lock-highlighting-faces)
 (defvar  neo-vc-ignored-face 'neo-vc-ignored-face)
