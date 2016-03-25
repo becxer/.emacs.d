@@ -62,11 +62,14 @@
 (set-face-attribute 'anzu-mode-line nil
                     :foreground "black" :background "yellow" :weight 'bold)
 (custom-set-variables
- '(anzu-mode-lighter "")
+ '(ansi-color-names-vector
+   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(anzu-deactivate-region t)
- '(anzu-search-threshold 1000)
+ '(anzu-mode-lighter "")
  '(anzu-replace-threshold 50)
- '(anzu-replace-to-string-separator " => "))
+ '(anzu-replace-to-string-separator " => ")
+ '(anzu-search-threshold 1000)
+)
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
@@ -102,9 +105,16 @@
 ;;CUSTOM THEME
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-hober)
-     (color-theme-lethe)))
+;;(eval-after-load "color-theme"
+;;  '(progn
+;;     (color-theme-initialize)
+;;     (color-theme-hober)
+;;     (color-theme-lethe)))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'load-path "~/.emacs.d/themes")
+(load-theme 'monokai t)
 
+(mapc
+(lambda (face)
+   (set-face-attribute face nil :weight 'bold))
+ (face-list))
