@@ -30,14 +30,26 @@
 (define-globalized-minor-mode
    global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode t)
+
+;;TOGGLE-DECO
 (setq toggle-deco-value -1)
 (defun toggle-deco ()
-    (interactive)
-    (linum-mode toggle-deco-value)
-    (fci-mode toggle-deco-value)
-    (indent-guide-global-mode toggle-deco-value)
-    (setq toggle-deco-value (* -1 toggle-deco-value)))
+  (message "Toggle linum-mode etc.")
+  (interactive)
+  (linum-mode toggle-deco-value)
+  (fci-mode toggle-deco-value)
+  (indent-guide-global-mode toggle-deco-value)
+  (setq toggle-deco-value (* -1 toggle-deco-value)))
 (global-set-key (kbd "C-n") 'toggle-deco)
+
+;;TOGGLE-ELECTRIC-INDENT
+(setq toggle-electric-indent -1)
+(defun toggle-electric ()
+  (message "Toggle electric-indent-mode")
+  (interactive)
+  (electric-indent-mode toggle-electric-indent)
+  (setq toggle-electric-indent (* -1 toggle-electric-indent)))
+(global-set-key (kbd "C-p") 'toggle-electric)
 
 ;;AUTO-COMPLETE
 (require 'auto-complete)
