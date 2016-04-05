@@ -72,6 +72,16 @@
 (require 'which-key)
 (which-key-mode)
 
+;;SMART-REP
+(add-to-list 'load-path "~/.emacs.d/plugins/smartrep")
+(require 'smartrep)
+(smartrep-define-key
+ global-map "C-x"
+'(("{" . shrink-window-horizontally)
+  ("}" . enlarge-window-horizontally)
+  ("-" . shrink-window)
+  ("+" . enlarge-window)))
+
 ;;INDENT-GUIDE
 (add-to-list 'load-path "~/.emacs.d/plugins/indent-guide")
 (require 'indent-guide)
