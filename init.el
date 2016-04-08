@@ -134,6 +134,35 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
+
+;;SMART-COMPILE
+(add-to-list 'load-path "~/.emacs.d/plugins/smart-compile")
+(require 'smart-compile)
+(require 'cl)  ; for lexical-let
+(defun do-execute (exe)
+  (with-current-buffer "*eshell*"
+    (goto-char (point-max))
+    (insert exe)
+    (eshell-send-input))
+  (switch-to-buffer-other-window "*eshell*"))
+
+(defun save-compile-execute ()
+  (interactive)
+  (lexical-let ((exe (smart-compile-string "./%n"))
+                finish-callback)
+    ;; when compilation is done, execute the program
+    ;; and remove the callback from
+    ;; compilation-finish-functions
+    (setq finish-callback
+          (lambda (buf msg)
+            (do-execute exe)
+            (setq compilation-finish-functions
+                  (delq finish-callback compilation-finish-functions))))
+    (push finish-callback compilation-finish-functions))
+  (smart-compile 1))
+
+(global-set-key (kbd "C-c *") 'save-compile-execute)
+
 ;;CUSTOM THEME
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
