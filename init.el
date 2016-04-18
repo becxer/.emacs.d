@@ -119,6 +119,13 @@
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 
+;;SMOOTH-SCROLL
+(add-to-list 'load-path "~/.emacs.d/plugins/smooth-scroll")
+(require 'smooth-scroll)
+(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+(setq auto-window-vscroll nil)
+
 ;;PYTHON-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
