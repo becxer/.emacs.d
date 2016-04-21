@@ -275,7 +275,7 @@ function `fci-mode' is run."
   :group 'fill-column-indicator
   :type 'character)
 
-(defcustom fci-rule-character-color nil
+(defcustom fci-rule-character-color "orange"
   "Color used to draw the fill-column rule on character terminals.
 If nil, the same color is used as for the graphical rule.
 

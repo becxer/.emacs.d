@@ -25,11 +25,10 @@
 ;;FILL-COLUMN-INDICATOR
 (add-to-list 'load-path "~/.emacs.d/plugins/fill-column-indicator")
 (require 'fill-column-indicator)
-(setq fci-rule-column 80)
-(setq fci-rule-color "red")
 (define-globalized-minor-mode
    global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode t)
+(setq fci-rule-column 80)
 
 ;;Begin-End-of line
 (global-set-key (kbd "C-M-f") 'end-of-line)
