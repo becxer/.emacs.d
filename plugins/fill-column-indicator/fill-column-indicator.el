@@ -266,7 +266,7 @@ function `fci-mode' is run."
   :group 'fill-column-indicator
   :type 'float)
 
-(defcustom fci-rule-character ?|
+(defcustom fci-rule-character ?\u2503
   "Character used to draw the fill-column rule on character terminals.
 
 Changes to this variable do not take effect until the mode
