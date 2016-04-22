@@ -60,6 +60,10 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
+;;JEDI SETTING
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 ;;AUTO-PAIR
 (add-to-list 'load-path "~/.emacs.d/plugins/autopair")
 (require 'autopair)
