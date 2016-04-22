@@ -12,4 +12,13 @@ becxer's .emacs.d defaults
     $ sudo pip install jedi
     $ sudo pip install epc
     $ sudo pip install virtualenv
-  
+
+
+## Todo-integration
+
+   + w3m
+   + todo.org
+   + gnus
+   + magit
+   + other autocompletions
+
