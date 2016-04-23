@@ -193,3 +193,5 @@
 (lambda (face)
    (set-face-attribute face nil :weight 'bold))
  (face-list))
+
+(setq abbrev-file-name "~/.emacs.d/abbrev_defs")
