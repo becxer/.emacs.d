@@ -16,9 +16,6 @@ becxer's .emacs.d defaults
 
 ## Todo-integration
 
-   + w3m
-   + todo.org
-   + gnus
    + magit
    + other autocompletions
 
