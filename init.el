@@ -148,6 +148,10 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
+;;EDIT-SERVER
+(add-to-list 'load-path "~/.emacs.d/plugins/edit-server")
+(require 'edit-server)
+(edit-server-start)
 
 ;;SMART-COMPILE
 (add-to-list 'load-path "~/.emacs.d/plugins/smart-compile")
@@ -194,4 +198,5 @@
    (set-face-attribute face nil :weight 'bold))
  (face-list))
 
+;;FIX ABBREV WARNING MESSAGE
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
