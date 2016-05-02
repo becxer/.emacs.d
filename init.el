@@ -201,16 +201,5 @@
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
-;;SUBLIMITY
-(add-to-list 'load-path "~/.emacs.d/plugins/sublimity")
-(require 'sublimity)
-(require 'sublimity-map)
-
-;;TOGGLE-SUBLIMITY-MODE
-(setq toggle-sublimity 1)
-(defun toggle-sublimity-mode ()
-  (message "Toggle sublimity mode : %d" toggle-sublimity)
-  (interactive)
-  (sublimity-mode toggle-sublimity)
-  (setq toggle-sublimity (* -1 toggle-sublimity)))
-(global-set-key (kbd "C-c C-l") 'toggle-sublimity-mode)
+;;FONT
+(set-default-font "hack 9")
