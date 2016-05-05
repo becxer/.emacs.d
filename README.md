@@ -14,8 +14,3 @@ becxer's .emacs.d defaults
     $ sudo pip install virtualenv
 
 
-## Todo-integration
-
-   + magit
-   + other autocompletions
-
