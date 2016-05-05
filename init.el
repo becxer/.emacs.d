@@ -271,3 +271,5 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/selectric-mode")
 (require 'selectric-mode)
 
+;;RAINBOW-DELIMITERS
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
