@@ -14,3 +14,7 @@ becxer's .emacs.d defaults
     $ sudo pip install virtualenv
 
 
+## Requirement
+
+    * emacs vresion >= 24.3 
+    * Git >= 1.9.4
