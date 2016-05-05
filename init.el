@@ -258,3 +258,6 @@
 ;;FONT
 (set-default-font "hack 9")
 
+;;ZONE
+(require 'zone)
+(zone-when-idle 120)
