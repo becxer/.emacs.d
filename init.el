@@ -261,3 +261,8 @@
 ;;ZONE
 (require 'zone)
 (zone-when-idle 120)
+
+;;SELECTRIC-MODE
+(add-to-list 'load-path "~/.emacs.d/plugins/selectric-mode")
+(require 'selectric-mode)
+
