@@ -17,7 +17,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/better-defaults")
 (require 'better-defaults)
 
-;;HELM (COMMAND PALLETE)
+;;HELM (LIKE SUBLIME COMMAND PALLETE)
 (require 'helm)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
@@ -90,6 +90,26 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode t)
+
+;;SHELL-POP
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(shell-pop-default-directory "/Users/kyagi/git")
+ '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+ '(shell-pop-term-shell "/bin/bash")
+ '(shell-pop-universal-key "C-t")
+ '(shell-pop-window-size 30)
+ '(shell-pop-full-span t)
+  '(shell-pop-window-position "bottom"))
+
+;;MULTIPLE-CURSOR(LIKE SUBLIME ALT-G)
+(require 'multiple-cursors)
+(global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-e") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-a") 'mc/mark-all-like-this)
 
 ;;BUFFER-MOVE
 (global-set-key (kbd "C-c C-[") 'buf-move)
@@ -237,3 +257,4 @@
 
 ;;FONT
 (set-default-font "hack 9")
+
