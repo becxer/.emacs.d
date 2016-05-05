@@ -92,10 +92,7 @@
 (global-auto-complete-mode t)
 
 ;;BUFFER-MOVE
-(global-set-key (kbd "C-c C-u") 'buf-move-up)
-(global-set-key (kbd "C-c C-d") 'buf-move-down)
-(global-set-key (kbd "C-c C-l") 'buf-move-left)
-(global-set-key (kbd "C-c C-r") 'buf-move-right)
+(global-set-key (kbd "C-c C-[") 'buf-move)
 
 ;;JEDI SETTING
 (add-hook 'python-mode-hook 'jedi:setup)
