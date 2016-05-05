@@ -183,6 +183,11 @@
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 
+;;FLYSPELL-MODE
+(setq ispell-dictionary "en_US")
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ;;PYTHON-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
