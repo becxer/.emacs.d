@@ -278,3 +278,7 @@
 ;;RAINBOW-DELIMITERS
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+;;DATE AND TIME
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
