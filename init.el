@@ -240,6 +240,10 @@
 
 (global-set-key (kbd "C-c *") 'save-compile-execute)
 
+;;MAGIT
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
 ;;CUSTOM THEME
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
