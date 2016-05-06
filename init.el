@@ -184,6 +184,7 @@
 (setq auto-window-vscroll nil)
 
 ;;FLYSPELL-MODE
+(setq ispell-program-name "/usr/local/bin/ispell")
 (setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -272,3 +273,13 @@
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
+
+;;MINIMAP-MODE
+(setq minimap-window-location 'right)
+(setq toggle-minimap-status 1)
+(defun toggle-minimap ()
+  (message "Toggle minimap status : %d" toggle-minimap-status)
+  (interactive)
+  (minimap-mode toggle-minimap-status)
+  (setq toggle-minimap-status (* -1 toggle-minimap-status)))
+(global-set-key (kbd "C-z C-m") 'toggle-minimap)
