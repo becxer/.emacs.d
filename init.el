@@ -256,11 +256,6 @@
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'monokai t)
 
-(mapc
-(lambda (face)
-   (set-face-attribute face nil :weight 'bold))
- (face-list))
-
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
