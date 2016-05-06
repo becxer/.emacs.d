@@ -184,8 +184,8 @@
 (setq auto-window-vscroll nil)
 
 ;;FLYSPELL-MODE
-(setq ispell-program-name "/usr/local/bin/ispell")
-(setq ispell-dictionary "english")
+(setq ispell-program-name "/usr/bin/ispell")
+(setq ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
