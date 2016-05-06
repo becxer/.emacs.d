@@ -13,6 +13,9 @@ becxer's .emacs.d defaults
     $ sudo pip install epc
     $ sudo pip install virtualenv
 
+  To enable spell check
+  
+    $ sudo apt-get install ispell
 
 ## Requirement
 
