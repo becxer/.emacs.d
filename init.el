@@ -184,7 +184,7 @@
 (setq auto-window-vscroll nil)
 
 ;;FLYSPELL-MODE
-(setq ispell-dictionary "en_US")
+(setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
@@ -247,25 +247,15 @@
 ;;CUSTOM THEME
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
-;;(eval-after-load "color-theme"
-;;  '(progn
-;;     (color-theme-initialize)
-;;     (color-theme-hober)
-;;     (color-theme-lethe)))
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'monokai t)
-
-(mapc
-(lambda (face)
-   (set-face-attribute face nil :weight 'bold))
- (face-list))
 
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;;FONT
-(set-default-font "hack 9")
+(set-default-font "hack 10")
 
 ;;ZONE
 (require 'zone)
