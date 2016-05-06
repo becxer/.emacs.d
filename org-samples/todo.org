@@ -1,0 +1,15 @@
+
+
+* TODO Project A
+
+** NEXT TASK 1
+*** TODO TASK 1-1
+
+** TODO TASK 2
+*** TODO TASK 2-1
+*** DONE TASK 2-2
+
+* Tasks
+** TODO Some miscellaneous task
+
+
