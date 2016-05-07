@@ -9,3 +9,4 @@ url/
 recentf
 .mc-lists.el
 tramp
+.emacs.desktop*

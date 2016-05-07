@@ -17,6 +17,11 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/better-defaults")
 (require 'better-defaults)
 
+;;DESKTOP-SAVE-MODE
+(desktop-save-mode 1)
+(setq history-length 250)
+(add-to-list 'desktop-globals-to-save 'file-name-history)
+
 ;;HELM (LIKE SUBLIME COMMAND PALLETE)
 (require 'helm)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
@@ -97,7 +102,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(shell-pop-default-directory "/Users/kyagi/git")
+ '(shell-pop-default-directory "~/")
  '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
  '(shell-pop-term-shell "/bin/bash")
  '(shell-pop-universal-key "C-t")
@@ -202,7 +207,6 @@
 
 ; switch to the interpreter after executing code
 (setq py-shell-switch-buffers-on-execute-p t)
-; (setq py-switch-buffers-on-execute-p t)
 ; don't split windows
 (setq py-split-windows-on-execute-p nil)
 ; try to automagically figure out indentation
@@ -256,7 +260,7 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;;FONT
-(set-default-font "hack 10")
+(set-default-font "hack 9")
 
 ;;ZONE
 (require 'zone)
