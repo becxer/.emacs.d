@@ -19,8 +19,6 @@
 
 ;;DESKTOP-SAVE-MODE
 (desktop-save-mode 1)
-(setq history-length 250)
-(add-to-list 'desktop-globals-to-save 'file-name-history)
 
 ;;HELM (LIKE SUBLIME COMMAND PALLETE)
 (require 'helm)
