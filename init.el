@@ -32,7 +32,7 @@
 (global-unset-key (kbd "C-x c"))
 (global-set-key (kbd "C-x b") 'helm-mini)
 (setq helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match    t)
+  helm-recentf-fuzzy-match    t)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -40,13 +40,13 @@
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 (when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
+(setq helm-google-suggest-use-curl-p t))
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t)
+  helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+  helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+  helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+  helm-ff-file-name-history-use-recentf t)
 
 (require 'helm-config)
 (helm-mode t)
@@ -60,7 +60,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/fill-column-indicator")
 (require 'fill-column-indicator)
 (define-globalized-minor-mode
-   global-fci-mode fci-mode (lambda () (fci-mode 1)))
+global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode t)
 (setq fci-rule-column 80)
 
@@ -71,21 +71,21 @@
 ;;TOGGLE-DECO
 (setq toggle-deco-value -1)
 (defun toggle-deco ()
-  (message "Toggle deco : %d" toggle-deco-value)
-  (interactive)
-  (linum-mode toggle-deco-value)
-  (fci-mode toggle-deco-value)
-  (indent-guide-global-mode toggle-deco-value)
-  (setq toggle-deco-value (* -1 toggle-deco-value)))
+(message "Toggle deco : %d" toggle-deco-value)
+(interactive)
+(linum-mode toggle-deco-value)
+(fci-mode toggle-deco-value)
+(indent-guide-global-mode toggle-deco-value)
+(setq toggle-deco-value (* -1 toggle-deco-value)))
 (global-set-key (kbd "C-n") 'toggle-deco)
 
 ;;TOGGLE-ELECTRIC-INDENT
 (setq toggle-electric-indent -1)
 (defun toggle-electric ()
-  (message "Toggle electric-indent : %d" toggle-electric-indent)
-  (interactive)
-  (electric-indent-mode toggle-electric-indent)
-  (setq toggle-electric-indent (* -1 toggle-electric-indent)))
+(message "Toggle electric-indent : %d" toggle-electric-indent)
+(interactive)
+(electric-indent-mode toggle-electric-indent)
+(setq toggle-electric-indent (* -1 toggle-electric-indent)))
 (global-set-key (kbd "C-p") 'toggle-electric)
 
 ;;AUTO-COMPLETE
@@ -96,17 +96,17 @@
 
 ;;SHELL-POP
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(shell-pop-default-directory "~/")
- '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
- '(shell-pop-term-shell "/bin/bash")
- '(shell-pop-universal-key "C-t")
- '(shell-pop-window-size 30)
- '(shell-pop-full-span t)
-  '(shell-pop-window-position "bottom"))
+;; custom-set-variables was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+'(shell-pop-default-directory "~/")
+'(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+'(shell-pop-term-shell "/bin/bash")
+'(shell-pop-universal-key "C-t")
+'(shell-pop-window-size 30)
+'(shell-pop-full-span t)
+'(shell-pop-window-position "bottom"))
 
 ;;MULTIPLE-CURSOR(LIKE SUBLIME ALT-G)
 (require 'multiple-cursors)
@@ -187,8 +187,8 @@
 (setq auto-window-vscroll nil)
 
 ;;FLYSPELL-MODE
-(setq ispell-program-name "/usr/bin/ispell")
-(setq ispell-dictionary "american")
+(setq ispell-program-name "/usr/local/bin/ispell")
+(setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
@@ -258,7 +258,7 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;;FONT
-(set-default-font "hack 9")
+(set-default-font "hack 12")
 
 ;;ZONE
 (require 'zone)
@@ -285,3 +285,15 @@
   (minimap-mode toggle-minimap-status)
   (setq toggle-minimap-status (* -1 toggle-minimap-status)))
 (global-set-key (kbd "C-z C-m") 'toggle-minimap)
+
+;;GDB-SETTING
+(setq gdb-show-main t)
+
+;;PATH
+(setenv "PATH"
+  (concat
+   "/usr/local/bin" ":"
+   (getenv "PATH")
+  )
+)
+
