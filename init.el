@@ -258,7 +258,7 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;;FONT
-(set-default-font "hack 12")
+(set-default-font "hack 9")
 
 ;;ZONE
 (require 'zone)
@@ -294,6 +294,8 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
   (concat
    "/usr/local/bin" ":"
    (getenv "PATH")
-  )
-)
+  ))
 
+;;FIXMEE-MODE
+(require 'fixmee)
+(fixmee-mode 1)
