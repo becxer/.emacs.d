@@ -5,6 +5,9 @@
 ;;   @ email becxer87@gmail.com
 ;;
 
+;; TODO : pull out setting package
+;; TODO : enable when package are supported OS
+
 ;;PACKAGE-ARCHIVES
 (when (>= emacs-major-version 24)
 (require 'package)
