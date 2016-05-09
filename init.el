@@ -176,6 +176,7 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (add-to-list 'load-path "~/.emacs.d/plugins/elscreen")
 (require 'elscreen)
 (elscreen-start)
+(global-set-key (kbd "<C-tab>") 'elscreen-next)
 
 ;;SWITCH-WINDOW
 (add-to-list 'load-path "~/.emacs.d/plugins/switch-window")
