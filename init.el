@@ -301,4 +301,11 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 
 ;;FIXMEE-MODE
 (require 'fixmee)
-(fixmee-mode 1)
+(setq toggle-fixmee-status 1)
+(defun toggle-fixmee ()
+  (message "Toggle fixmee status : %d" toggle-fixmee-status)
+  (interactive)
+  (fixmee-mode toggle-fixmee-status)
+  (setq toggle-fixmee-status (* -1 toggle-fixmee-status)))
+(global-set-key (kbd "C-c t") 'toggle-fixmee)
+
