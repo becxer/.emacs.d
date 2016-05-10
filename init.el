@@ -66,6 +66,7 @@
 global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode t)
 (setq fci-rule-column 80)
+(setq column-number-mode t)
 
 ;;Begin-End-of line
 (global-set-key (kbd "C-M-f") 'end-of-line)
