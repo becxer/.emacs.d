@@ -305,3 +305,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (require 'fixmee)
 (fixmee-mode 1)
 (global-fixmee-mode 1)
+
+;;AUTO-REVERT-MODE
+(global-auto-revert-mode t)
