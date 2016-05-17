@@ -1,3 +1,4 @@
+.pydemon.*
 backups/
 auto-save-list/
 eshell/
@@ -11,3 +12,25 @@ recentf
 tramp
 .emacs.desktop*
 var/
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.org-id-locations
+*_archive
+*_flymake.*
+/eshell/history
+/eshell/lastdir
+/elpa/
+*.rel
+/auto/
+.cask/
+dist/
+flycheck_*.el
+/server/
+.projectile

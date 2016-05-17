@@ -9,12 +9,11 @@
 ;; TODO : enable when package are supported OS
 
 ;;PACKAGE-ARCHIVES
-(when (>= emacs-major-version 24)
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-(package-initialize))
+(package-initialize)
 
 ;;BETTER-DEFAULTS
 (add-to-list 'load-path "~/.emacs.d/plugins/better-defaults")
