@@ -266,7 +266,7 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 
 ;;ZONE
 (require 'zone)
-(zone-when-idle 120)
+(zone-when-idle 2000)
 
 ;;SELECTRIC-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/selectric-mode")
