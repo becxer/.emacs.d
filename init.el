@@ -261,9 +261,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
-;;FONT
-(set-default-font "hack 9")
-
 ;;ZONE
 (require 'zone)
 (zone-when-idle 2000)
