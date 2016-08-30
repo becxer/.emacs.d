@@ -199,6 +199,11 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;PYTHON-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
+
+;;CUDA-MODE
+(add-to-list 'load-path "~/.emacs.d/plugins/cuda-mode")
+(require 'cuda-mode)
+
 ; use IPython
 (setq-default py-shell-name "ipython")
 (setq-default py-which-bufname "IPython")
