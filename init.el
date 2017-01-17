@@ -135,6 +135,7 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-set-key (kbd "C-e") 'neotree-toggle)
 
 ;;SR-SPEEDBAR
+(add-to-list 'load-path "~/.emacs.d/plugins/sr-speedbar")
 (require 'sr-speedbar)
 (global-set-key (kbd "C-b") 'sr-speedbar-toggle)
 
