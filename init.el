@@ -134,6 +134,10 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (require 'neotree)
 (global-set-key (kbd "C-e") 'neotree-toggle)
 
+;;SR-SPEEDBAR
+(require 'sr-speedbar)
+(global-set-key (kbd "C-b") 'sr-speedbar-toggle)
+
 ;;WHICH-KEY
 (add-to-list 'load-path "~/.emacs.d/plugins/which-key")
 (require 'which-key)
@@ -265,10 +269,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
-
-;;ZONE
-(require 'zone)
-(zone-when-idle 2000)
 
 ;;SELECTRIC-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/selectric-mode")
