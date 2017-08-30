@@ -120,12 +120,10 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-set-key (kbd "M-e") 'mc/mark-previous-like-this)
 (global-set-key (kbd "M-a") 'mc/mark-all-like-this)
 
-;;BUFFER-MOVE
-(global-set-key (kbd "C-c C-[") 'buf-move)
-
 ;;JEDI SETTING
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+(global-set-key (kbd "M-?") 'jedi:complete)
 
 ;;AUTO-PAIR
 (add-to-list 'load-path "~/.emacs.d/plugins/autopair")
@@ -156,6 +154,13 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
   ("}" . enlarge-window-horizontally)
   ("-" . shrink-window)
   ("+" . enlarge-window)))
+
+(smartrep-define-key                                                                                                                                                                                                                                                            
+ global-map "C-c"                                                                                                                                                                                                                                                               
+'(("{" . buf-move-left)                                                                                                                                                                                                                                                         
+  ("}" . buf-move-right)                                                                                                                                                                                                                                                        
+  ("-" . buf-move-down)                                                                                                                                                                                                                                                         
+  ("+" . buf-move-up))) 
 
 ;;INDENT-GUIDE
 (add-to-list 'load-path "~/.emacs.d/plugins/indent-guide")
