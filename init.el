@@ -22,6 +22,9 @@
 ;;DESKTOP-SAVE-MODE
 (desktop-save-mode 1)
 
+;;FONT
+(set-default-font "Hack 9")
+
 ;;HELM (LIKE SUBLIME COMMAND PALLETE)
 (require 'helm)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
@@ -310,3 +313,7 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 
 ;;AUTO-REVERT-MODE
 (global-auto-revert-mode t)
+
+;;AUTO-SETTING-GDB
+(setq gdb-many-windows t)
+(setq gdb-restore-windows t)
