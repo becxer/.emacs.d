@@ -213,6 +213,13 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
 (require 'python-mode)
 
+;;PYVENV-MODE
+(add-to-list 'load-path "~/.emacs.d/plugins/pyvenv")
+(require 'pyvenv)
+(setenv "WORKON_HOME" "~/anaconda3/envs")
+(pyvenv-mode 1)
+(pyvenv-tracking-mode 1)
+
 ;;CUDA-MODE
 (add-to-list 'load-path "~/.emacs.d/plugins/cuda-mode")
 (require 'cuda-mode)
