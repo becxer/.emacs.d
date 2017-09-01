@@ -22,6 +22,9 @@
 ;;DESKTOP-SAVE-MODE
 (desktop-save-mode 1)
 
+;;KEY-BINDDING
+(setq x-alt-keysym 'meta)
+
 ;;FONT
 (set-default-font "Hack 9")
 
