@@ -28,6 +28,10 @@
 ;;FONT
 (set-default-font "Hack 9")
 
+;;DISABLE AUTO-BACKUP
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
 ;;HELM (LIKE SUBLIME COMMAND PALLETE)
 (require 'helm)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
