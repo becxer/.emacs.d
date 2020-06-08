@@ -21,8 +21,4 @@ becxer's .emacs.d defaults
 
     * emacs vresion >= 24.3 
     * Git >= 1.9.4
-
-## TODO
-
-    * Describe in README.md what packages installed
     
