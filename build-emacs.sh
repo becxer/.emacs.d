@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Build latest version of Emacs, version management with stow

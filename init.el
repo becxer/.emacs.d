@@ -19,9 +19,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/better-defaults")
 (require 'better-defaults)
 
-;;DESKTOP-SAVE-MODE
-(desktop-save-mode 1)
-
 ;;KEY-BINDDING
 (setq x-alt-keysym 'meta)
 
@@ -130,7 +127,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;JEDI SETTING
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
-(global-set-key (kbd "M-?") 'jedi:complete)
 
 ;;AUTO-PAIR
 (add-to-list 'load-path "~/.emacs.d/plugins/autopair")
@@ -196,7 +192,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (add-to-list 'load-path "~/.emacs.d/plugins/elscreen")
 (require 'elscreen)
 (elscreen-start)
-(global-set-key (kbd "<C-tab>") 'elscreen-next)
 
 ;;SWITCH-WINDOW
 (add-to-list 'load-path "~/.emacs.d/plugins/switch-window")
@@ -216,73 +211,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-;;PYTHON-MODE
-(add-to-list 'load-path "~/.emacs.d/plugins/python-mode")
-(require 'python-mode)
-
-;;PYVENV-MODE
-(add-to-list 'load-path "~/.emacs.d/plugins/pyvenv")
-(require 'pyvenv)
-(setenv "WORKON_HOME" "~/anaconda3/envs")
-(pyvenv-mode 1)
-(pyvenv-tracking-mode 1)
-
-;;CUDA-MODE
-(add-to-list 'load-path "~/.emacs.d/plugins/cuda-mode")
-(require 'cuda-mode)
-
-; use IPython
-(setq-default py-shell-name "ipython")
-(setq-default py-which-bufname "IPython")
-; use the wx backend, for both mayavi and matplotlib
-(setq py-python-command-args
-  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
-(setq py-force-py-shell-name-p t)
-
-; switch to the interpreter after executing code
-(setq py-shell-switch-buffers-on-execute-p t)
-; don't split windows
-(setq py-split-windows-on-execute-p nil)
-; try to automagically figure out indentation
-(setq py-smart-indentation t)
-
-;;EDIT-SERVER
-(add-to-list 'load-path "~/.emacs.d/plugins/edit-server")
-(require 'edit-server)
-(edit-server-start)
-
-;;SMART-COMPILE
-(add-to-list 'load-path "~/.emacs.d/plugins/smart-compile")
-(require 'smart-compile)
-(require 'cl)  ; for lexical-let
-(defun do-execute (exe)
-  (with-current-buffer "*eshell*"
-    (goto-char (point-max))
-    (insert exe)
-    (eshell-send-input))
-  (switch-to-buffer-other-window "*eshell*"))
-
-(defun save-compile-execute ()
-  (interactive)
-  (lexical-let ((exe (smart-compile-string "./%n"))
-                finish-callback)
-    ;; when compilation is done, execute the program
-    ;; and remove the callback from
-    ;; compilation-finish-functions
-    (setq finish-callback
-          (lambda (buf msg)
-            (do-execute exe)
-            (setq compilation-finish-functions
-                  (delq finish-callback compilation-finish-functions))))
-    (push finish-callback compilation-finish-functions))
-  (smart-compile 1))
-
-(global-set-key (kbd "C-c *") 'save-compile-execute)
-
-;;MAGIT
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-
 ;;CUSTOM THEME
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme")
 (require 'color-theme)
@@ -293,10 +221,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;Abbrev-file
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
-;;SELECTRIC-MODE
-(add-to-list 'load-path "~/.emacs.d/plugins/selectric-mode")
-(require 'selectric-mode)
-
 ;;RAINBOW-DELIMITERS
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
@@ -304,26 +228,6 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
-
-;;MINIMAP-MODE
-(setq minimap-window-location 'right)
-(setq toggle-minimap-status 1)
-(defun toggle-minimap ()
-  (message "Toggle minimap status : %d" toggle-minimap-status)
-  (interactive)
-  (minimap-mode toggle-minimap-status)
-  (setq toggle-minimap-status (* -1 toggle-minimap-status)))
-(global-set-key (kbd "C-z C-m") 'toggle-minimap)
-
-;;GDB-SETTING
-(setq gdb-show-main t)
-
-;;PATH
-(setenv "PATH"
-  (concat
-   "/usr/local/bin" ":"
-   (getenv "PATH")
-  ))
 
 ;;FIXMEE-MODE
 (require 'fixmee)
@@ -333,6 +237,3 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;AUTO-REVERT-MODE
 (global-auto-revert-mode t)
 
-;;AUTO-SETTING-GDB
-(setq gdb-many-windows t)
-(setq gdb-restore-windows t)
